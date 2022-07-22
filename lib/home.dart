@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_wheel/maps.dart' as maps;
+import 'package:get/get.dart';
+import 'maps.dart';
+
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -30,12 +33,10 @@ class HomePage extends StatelessWidget {
                     color: Colors.white,
                     width: 150,
                     height: 150,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => maps.MyApp()));
+                    child: ElevatedButton(
+                      onPressed: () {
+                        print("ggg");
+                        Get.to(Map);
                       },
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,10 +80,7 @@ class HomePage extends StatelessWidget {
                     height: 150,
                     child: InkWell(
                       onTap: (){
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => test.SearchBarDemoApp()));
+
                       },
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
