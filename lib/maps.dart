@@ -15,7 +15,7 @@ class _MyAppState extends State<Map> {
   final LatLng _center = const LatLng(45.521563, -122.677433);
 
   AppBar buildAppBar(BuildContext context) {
-    return new AppBar(
+    return AppBar(
         title: new Text('Search Bar'),
         backgroundColor: Color(0xF2F2F2),
         actions: [searchBar.getSearchAction(context)],);
