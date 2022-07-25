@@ -1,8 +1,8 @@
+import 'package:path/path.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'maps.dart';
-
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,261 +15,41 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              width: 150,
               height: 20,
             ),
             //Padding(padding: const EdgeInsets.fromLTRB(30, 10, 10, 10),),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 24,
-                  height: 150,
-                ),
-                ClipRRect(
-                  //모서리가 둥글게
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    color: Colors.white,
-                    width: 150,
-                    height: 150,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        print("ggg");
-                        Get.to(Map);
-                      },
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            " 전체",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 30,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 30,
-                            height: 30,
-                          ),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Icon(
-                                  Icons.menu,
-                                  color: Color(0xFFF3D5FB),
-                                  size: 70,
-                                ),
-                              ])
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 45,
-                  height: 150,
-                ),
-                ClipRRect(
-                  //모서리가 둥글게
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    color: Colors.white,
-                    width: 150,
-                    height: 150,
-                    child: InkWell(
-                      onTap: (){
-
-                      },
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            " 음식점",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 30,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 30,
-                            height: 30,
-                          ),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Icon(
-                                  Icons.restaurant_menu,
-                                  color: Color(0xFFF3D5FB),
-                                  size: 70,
-                                ),
-                              ])
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                SizedBox(width: 24),
+                Menu(context,"전체", Icons.menu, 27),
+                SizedBox(width: 45),
+                Menu(context, "음식점", Icons.restaurant_menu, 27),
               ],
             ),
-            SizedBox(
-              width: 350,
-              height: 50,
-            ),
-
+            SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 24,
-                  height: 150,
-                ),
-                ClipRRect(
-                  //모서리가 둥글게
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    color: Colors.white,
-                    width: 150,
-                    height: 150,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          " 카페 \n & \n 디저트",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 22,
-                          ),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Icon(
-                                Icons.local_cafe,
-                                color: Color(0xFFF3D5FB),
-                                size: 60,
-                              ),
-                            ])
-                      ],
-                    ),
-                  ),
-                ),
+                SizedBox(width: 24),
+                Menu(context, "카페", Icons.local_cafe, 27),
                 SizedBox(
                   width: 45,
                   height: 150,
                 ),
-                ClipRRect(
-                  //모서리가 둥글게
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    color: Colors.white,
-                    width: 150,
-                    height: 150,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          " 숙박\n 시설",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 30,
-                          ),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Icon(
-                                Icons.hotel,
-                                color: Color(0xFFF3D5FB),
-                                size: 60,
-                              ),
-                            ]),
-                      ],
-                    ),
-                  ),
-                ),
+                Menu(context, "숙박\n시설", Icons.hotel, 27),
               ],
             ),
-            SizedBox(
-              width: 350,
-              height: 50,
-            ),
+            SizedBox(height: 50),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 24,
-                  height: 150,
-                ),
-                ClipRRect(
-                  //모서리가 둥글게
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    color: Colors.white,
-                    width: 150,
-                    height: 150,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          " 여행 \n 명소",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 30,
-                          ),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Icon(
-                                Icons.flight,
-                                color: Color(0xFFF3D5FB),
-                                size: 60,
-                              ),
-                            ])
-                      ],
-                    ),
-                  ),
-                ),
+                SizedBox(width: 24),
+                Menu(context, "여행\n명소", Icons.flight, 27),
                 SizedBox(
                   width: 45,
-                  height: 150,
                 ),
-                ClipRRect(
-                  //모서리가 둥글게
-                  borderRadius: BorderRadius.circular(20),
-                  child: Container(
-                    color: Colors.white,
-                    width: 150,
-                    height: 150,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          " 쇼핑 \n 유통",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 30,
-                          ),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Icon(
-                                Icons.shopping_cart,
-                                color: Color(0xFFF3D5FB),
-                                size: 60,
-                              ),
-                            ])
-                      ],
-                    ),
-                  ),
-                ),
+                Menu(context, "쇼핑\n유통", Icons.shopping_cart, 27),
               ],
             ),
           ],
@@ -284,4 +64,62 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+
+}
+
+Widget Menu(BuildContext context, String name, IconData icon, double size) {
+  return ClipRRect(
+    //모서리가 둥글게
+    borderRadius: BorderRadius.circular(20),
+    child: Container(
+      color: Colors.white,
+      width: 150,
+      height: 150,
+      child: OutlinedButton(
+        onPressed: () {
+         // print("ggg");
+          // Get.to();
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Map()),
+          );
+        },
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(width: 0, color: Colors.white),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 5),
+            Text(
+              name,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w700,
+                fontSize: size,
+              ),
+            ),
+            Expanded(
+              child: Row(),
+            ),
+            // SizedBox(
+            //   width: 30,
+            //   height: 30,
+            // ),
+            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+              Icon(
+                icon,
+                color: Color(0xFFF3D5FB),
+                size: 55,
+              ),
+            ]),
+            SizedBox(
+              height: 10,
+            )
+          ],
+        ),
+      ),
+    ),
+  );
 }
