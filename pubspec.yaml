@@ -44,6 +44,8 @@ dependencies:
   google_sign_in: ^5.4.0
   auth: ^8.1.0
   get: ^4.6.5
+  geolocator: ^9.0.1
+  location: ^4.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
