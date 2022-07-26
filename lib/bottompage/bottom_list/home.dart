@@ -1,12 +1,14 @@
-import 'package:path/path.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'maps.dart';
+import '../../maps.dart';
+import 'map.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class Home extends StatefulWidget {
+  @override
+  _BottomState createState() => _BottomState();
+}
 
+class _BottomState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,14 +17,14 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 20,
+              height: 50,
             ),
             //Padding(padding: const EdgeInsets.fromLTRB(30, 10, 10, 10),),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(width: 24),
-                Menu(context,"전체", Icons.menu, 27),
+                Menu(context, "전체", Icons.menu, 27),
                 SizedBox(width: 45),
                 Menu(context, "음식점", Icons.restaurant_menu, 27),
               ],
@@ -55,17 +57,8 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: '홈'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: '둘러보기'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: '마이페이지'),
-        ],
-      ),
     );
   }
-
-
 }
 
 Widget Menu(BuildContext context, String name, IconData icon, double size) {
@@ -78,7 +71,6 @@ Widget Menu(BuildContext context, String name, IconData icon, double size) {
       height: 150,
       child: OutlinedButton(
         onPressed: () {
-         // print("ggg");
           // Get.to();
           Navigator.push(
             context,

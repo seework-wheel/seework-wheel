@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -12,9 +11,7 @@ class Login extends StatefulWidget {
   State<Login> createState() => _LoginState();
 }
 
-
 class _LoginState extends State<Login> {
-
   CollectionReference database = FirebaseFirestore.instance.collection('user');
   late QuerySnapshot querySnapshot;
 
@@ -24,7 +21,7 @@ class _LoginState extends State<Login> {
 
     // Obtain the auth details from the request
     final GoogleSignInAuthentication? googleAuth =
-    await googleUser?.authentication;
+        await googleUser?.authentication;
 
     // Create a new credential
     final credential = GoogleAuthProvider.credential(
@@ -60,7 +57,6 @@ class _LoginState extends State<Login> {
                   backgroundColor: Colors.white,
                   shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(25)))),
-
               child: Row(
                 children: [
                   Image.asset(
@@ -75,7 +71,6 @@ class _LoginState extends State<Login> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
-
                   ),
                 ],
               ))

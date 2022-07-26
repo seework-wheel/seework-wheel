@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_search_bar/flutter_search_bar.dart';
 
-class Map extends StatefulWidget {
-  const Map({Key? key}) : super(key: key);
+class MYMap extends StatefulWidget {
+  const MYMap({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<Map> {
+class _MyAppState extends State<MYMap> {
   late GoogleMapController mapController;
 
   final LatLng _center = const LatLng(45.521563, -122.677433);
@@ -18,7 +18,8 @@ class _MyAppState extends State<Map> {
     return AppBar(
       title: new Text('Search Bar'),
       backgroundColor: Color(0xF2F2F2),
-      actions: [searchBar.getSearchAction(context)],);
+      actions: [searchBar.getSearchAction(context)],
+    );
   }
 
   void _onMapCreated(GoogleMapController controller) {
@@ -36,8 +37,8 @@ class _MyAppState extends State<Map> {
         return;
       }
 
-      ScaffoldMessenger.maybeOf(context)
-          ?.showSnackBar(new SnackBar(content: new Text('You wrote "$value"!')));
+      ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+          new SnackBar(content: new Text('You wrote "$value"!')));
     });
   }
 
@@ -98,9 +99,16 @@ class _MyAppState extends State<Map> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: '홈', backgroundColor: Colors.grey),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: '둘러보기', backgroundColor: Color(0xF2F2F2)),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: '마이페이지', backgroundColor: Color(0xF2F2F2)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home), label: '홈', backgroundColor: Colors.grey),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.menu_book),
+              label: '둘러보기',
+              backgroundColor: Color(0xF2F2F2)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: '마이페이지',
+              backgroundColor: Color(0xF2F2F2)),
         ],
       ),
     );
