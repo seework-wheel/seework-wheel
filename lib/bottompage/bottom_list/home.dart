@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../maps.dart';
+import 'package:project_wheel/bottompage/bottom_list/mypage.dart';
+import '../bottom_click.dart';
+
 import 'map.dart';
 
 class Home extends StatefulWidget {
@@ -71,7 +73,6 @@ Widget Menu(BuildContext context, String name, IconData icon, double size) {
       height: 150,
       child: OutlinedButton(
         onPressed: () {
-          // Get.to();
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => Map()),

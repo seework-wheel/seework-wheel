@@ -86,7 +86,7 @@ class _BottomState extends State<Map> {
             zoomControlsEnabled:false,
             onMapCreated: _onMapCreated, //지도를 사용할 준비가 되었을 때 콜백
             initialCameraPosition:
-            CameraPosition(target: LatLng(37.77483, -122.41942), zoom: 12),
+            CameraPosition(target: LatLng(36.01944, 129.34167), zoom: 12),
             markers: _markers,
           )
         ],

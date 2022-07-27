@@ -137,6 +137,8 @@ Widget information() {
           width: 20,
         ),
         Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+
 
         ),
 

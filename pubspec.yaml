@@ -43,6 +43,7 @@ dependencies:
   auth: ^8.1.0
   get: ^4.6.5
   google_maps_flutter: ^2.1.8
+  location: ^4.4.0
 
 dev_dependencies:
   flutter_test:
