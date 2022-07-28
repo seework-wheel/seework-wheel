@@ -33,6 +33,7 @@ class _BottomState extends State<MyPage> {
                   '로그아웃',
                   style: TextStyle(
                     color: Color(0xff9F76A6),
+
                   ),
                 ),
                 SizedBox(

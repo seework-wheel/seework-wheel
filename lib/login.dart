@@ -50,30 +50,31 @@ class _LoginState extends State<Login> {
             height: 70,
           ),
           OutlinedButton(
-              onPressed: signInWithGoogle,
-              style: OutlinedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  fixedSize: Size(300, 50),
-                  backgroundColor: Colors.white,
-                  shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(25)))),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/icon/google.png',
-                    width: 30,
+            onPressed: signInWithGoogle,
+            style: OutlinedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                fixedSize: Size(300, 50),
+                backgroundColor: Colors.white,
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(25)))),
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/icon/google.png',
+                  width: 30,
+                ),
+                SizedBox(width: 30),
+                Text(
+                  "Google로 로그인 하기",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
-                  SizedBox(width: 30),
-                  Text(
-                    "Google로 로그인 하기",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ))
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
