@@ -47,4 +47,10 @@ class _PageState extends State<Page> {
       ),
     );
   }
+
+  void setIndex(int x){
+    currentIndex=x;
+  }
+
+
 }

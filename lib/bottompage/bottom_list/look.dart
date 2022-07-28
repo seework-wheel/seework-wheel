@@ -132,16 +132,77 @@ Widget information() {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
+        /* SizedBox(
           height: 20,
           width: 20,
+        ),*/
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: 20,
+            ),
+            Image.asset(
+              'assets/icon/school.png',
+              height: 100,
+              width: 80,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '한동대학교',
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Text(
+                  '주소',
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                ),
+                //실선 생성하기
+                Text(
+                  '전화번호',
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
+                )
+              ],
+            )
+          ],
         ),
         Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-
-
-        ),
-
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(width: 15),
+            Icon(
+              Icons.sensor_door,
+              size: 40,
+              color: Color(0xFFF3D5FB),
+            ),
+            Icon(
+              Icons.accessible,
+              size: 40,
+              color: Color(0xFFF3D5FB),
+            ),
+            Icon(
+              Icons.elevator,
+              size: 40,
+              color: Color(0xFFF3D5FB),
+            ),
+            Icon(
+              Icons.local_parking,
+              size: 40,
+              color: Color(0xFFF3D5FB),
+            )
+          ],
+        )
       ],
     ),
   );

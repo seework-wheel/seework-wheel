@@ -8,6 +8,9 @@
        <meta-data android:name="com.google.android.geo.API_KEY"
            android:value="AIzaSyB9WhKOMo_et05-FB2WDkIhS-xjw-30CBA"/>
 
+<!--       <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />-->
+<!--       <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>-->
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
