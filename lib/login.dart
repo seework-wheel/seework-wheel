@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'app.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -50,7 +51,13 @@ class _LoginState extends State<Login> {
             height: 70,
           ),
           OutlinedButton(
-              onPressed: signInWithGoogle,
+              onPressed: () {
+                signInWithGoogle();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => wheelApp()),
+                );
+              },
               style: OutlinedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 20),
                   fixedSize: Size(300, 50),
