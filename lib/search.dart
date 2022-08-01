@@ -103,7 +103,7 @@ Widget search_list(String name) {
           padding: const EdgeInsets.fromLTRB(20, 0, 17, 0),
           child: Divider(
             color: Colors.black,
-            thickness: 0.5,
+            thickness: 0.2,
             height: 0,
           ),
         )
