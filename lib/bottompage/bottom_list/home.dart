@@ -18,6 +18,7 @@ class _BottomState extends State<Home> {
   //final user = FirebaseAuth.instance.currentUser;
 
   @override
+  bool get wantKeepAlive => true;
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF2F2F2),

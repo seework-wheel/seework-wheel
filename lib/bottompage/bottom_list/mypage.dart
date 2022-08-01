@@ -11,6 +11,7 @@ class MyPage extends StatefulWidget {
 
 class _BottomState extends State<MyPage> {
   @override
+  bool get wantKeepAlive => true;
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

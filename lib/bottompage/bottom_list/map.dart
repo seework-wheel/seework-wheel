@@ -18,6 +18,7 @@ class _BottomState extends State<Map> {
   late BitmapDescriptor _markerIcon;
 
   @override
+  bool get wantKeepAlive => true;
   void initState() {
     super.initState();
     _setMarkerIcon();

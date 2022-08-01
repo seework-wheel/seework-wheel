@@ -12,6 +12,7 @@ class Look extends StatefulWidget {
 
 class _BottomState extends State<Look> {
   @override
+  bool get wantKeepAlive => true;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
