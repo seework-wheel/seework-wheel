@@ -1,8 +1,10 @@
 import 'package:auth/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_wheel/mypage_list/service_center.dart';
 
 import '../../login.dart';
+import '../../mypage_list/call.dart';
 
 class MyPage extends StatefulWidget {
   @override
@@ -12,6 +14,7 @@ class MyPage extends StatefulWidget {
 class _BottomState extends State<MyPage> {
   @override
   bool get wantKeepAlive => true;
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -196,7 +199,10 @@ class _BottomState extends State<MyPage> {
                 ),
                 TextButton.icon(
                   // <-- TextButton
-                  onPressed: () {},
+                  onPressed: () { Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ServiceCenter()),
+                  );},
                   icon: Icon(
                     Icons.phone_in_talk,
                     size: 24.0,
@@ -225,7 +231,12 @@ class _BottomState extends State<MyPage> {
                 ),
                 TextButton.icon(
                   // <-- TextButton
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Call()),
+                    );
+                  },
                   icon: Icon(
                     Icons.logout,
                     size: 24.0,
