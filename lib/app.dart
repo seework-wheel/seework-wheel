@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'bottompage/bottom_click.dart';
+import 'bottompage/bottom_list/home.dart';
+import 'login.dart';
+
 
 class wheelApp extends StatelessWidget {
   const wheelApp({Key? key}) : super(key: key);
@@ -19,7 +22,7 @@ class wheelApp extends StatelessWidget {
           );
         }
         if (snapshot.connectionState == ConnectionState.done) {
-          return Bottom();
+          return Home();
         }
         return const CircularProgressIndicator(); //로딩중
       },

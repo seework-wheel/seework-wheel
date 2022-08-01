@@ -1,3 +1,4 @@
+import 'package:auth/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -29,13 +30,27 @@ class _BottomState extends State<MyPage> {
                 SizedBox(
                   width: 10,
                 ),
-                Text(
+                IconButton(
+                  onPressed: () {
+                    FirebaseAuth.instance.signOut();
+                  },
+                  icon: Icon(
+                    CupertinoIcons.square_arrow_left,
+                    size: 20,
+                    color: Color(0xff9F76A6),
+                  ),
+                ),
+
+                /*Text(
                   '로그아웃',
                   style: TextStyle(
                     color: Color(0xff9F76A6),
+                    onPressed: () {
+                      FirebaseAuth.instance.signOut();
+                    },
 
                   ),
-                ),
+                ),*/
                 SizedBox(
                   width: 15,
                 )
