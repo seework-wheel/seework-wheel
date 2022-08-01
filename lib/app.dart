@@ -22,7 +22,7 @@ class wheelApp extends StatelessWidget {
           );
         }
         if (snapshot.connectionState == ConnectionState.done) {
-          return Home();
+          return Login();
         }
         return const CircularProgressIndicator(); //로딩중
       },

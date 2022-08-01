@@ -2,6 +2,8 @@ import 'package:auth/auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../login.dart';
+
 class MyPage extends StatefulWidget {
   @override
   _BottomState createState() => _BottomState();
@@ -33,6 +35,10 @@ class _BottomState extends State<MyPage> {
                 IconButton(
                   onPressed: () {
                     FirebaseAuth.instance.signOut();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()),
+                    );
                   },
                   icon: Icon(
                     CupertinoIcons.square_arrow_left,

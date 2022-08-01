@@ -6,19 +6,24 @@ import '../bottom_click.dart';
 import 'map.dart';
 
 class Home extends StatefulWidget {
+
+  final user = FirebaseAuth.instance.currentUser;
+
   @override
   _BottomState createState() => _BottomState();
 }
 
 class _BottomState extends State<Home> {
-  final user = FirebaseAuth.instance.currentUser;
+
+  //final user = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF2F2F2),
       body: SafeArea(
         child: StreamBuilder(
-            //일부데이터를 여러번 가져올때 StreamBuilder 사용
+          //일부데이터를 여러번 가져올때 StreamBuilder 사용
             stream: FirebaseAuth.instance.authStateChanges(),
             //어떤 데이터를 가져오냐 ,로그인 한 사람을 가져온다
             builder: (context, snapshot) {

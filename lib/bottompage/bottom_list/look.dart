@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../search.dart';
+
 class Look extends StatefulWidget {
   @override
   _BottomState createState() => _BottomState();
@@ -13,37 +15,45 @@ class _BottomState extends State<Look> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFF2F2F2),
-        leading: Icon(Icons.menu, color: Colors.black, size: 35),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(width: 13),
-            Container(
-              width: 290,
-              height: 33,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Icon(
-                    CupertinoIcons.search,
-                    color: Color(0xFFF3D5FB),
-                    size: 33,
-                  ),
-                  SizedBox(width: 7)
-                ],
-              ),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: Color(0xFFF3D5FB),
-                  ),
-                  color: Colors.white),
-            )
-          ],
-        ),
-      ),
+          backgroundColor: Color(0xFFF2F2F2),
+          leading: Builder(builder: (BuildContext context) {
+            return IconButton(
+                icon: new Icon(Icons.menu, color: Colors.black, size: 35),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                });
+          }),
+          title: SizedBox(
+            height: 33,
+            width: 300,
+            child: OutlinedButton(
+                child: Stack(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("검색할 단어를 입력하세요",
+                          style: TextStyle(
+                            color: Colors.grey,
+                          )),
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Icon(Icons.search, color: Color(0xFFF3D5FB)),
+                    )
+                  ],
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Search()),
+                  );
+                },
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(20.0)),
+                    side: BorderSide(width: 1.0, color: Color(0xFFF3D5FB)))),
+          )),
       body: SafeArea(
         child: Column(
           children: [

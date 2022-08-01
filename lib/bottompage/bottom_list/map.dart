@@ -1,7 +1,10 @@
 import 'dart:collection';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../../search.dart';
 
 class Map extends StatefulWidget {
   //const Map({Key? key}) : super(key: key);
@@ -13,8 +16,6 @@ class _BottomState extends State<Map> {
   Set<Marker> _markers = HashSet<Marker>();
   late GoogleMapController _mapController;
   late BitmapDescriptor _markerIcon;
-
-
 
   @override
   void initState() {
@@ -35,7 +36,7 @@ class _BottomState extends State<Map> {
         markerId: MarkerId("0"),
         position: LatLng(37.77483, -122.41942),
         infoWindow:
-        InfoWindow(title: "San Francisco", snippet: "interesting city"),
+            InfoWindow(title: "San Francisco", snippet: "interesting city"),
         icon: _markerIcon,
       ));
     });
@@ -46,67 +47,58 @@ class _BottomState extends State<Map> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFFF2F2F2),
-
-          /* leading: IconButton(
-          icon: new Icon(Icons.menu),
-          color: Colors.black,
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-        ), */
-
-          leading: Builder(builder: (BuildContext context) {
-            return IconButton(
-                icon: new Icon(Icons.menu, color: Colors.black, size: 35),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                });
-          }),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(width: 13),
-              Container(
-                width: 290,
-                height: 33,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Icon(
-                      CupertinoIcons.search,
-                      color: Color(0xFFF3D5FB),
-                      size: 30,
-                    ),
-                    SizedBox(width: 7)
-                  ],
-                ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      width: 2,
-                      color: Color(0xFFF3D5FB),
-                    ),
-                    color: Colors.white),
-              )
-            ],
-          ),
-        ),
-        body:
-        Stack(
+            backgroundColor: Color(0xFFF2F2F2),
+            leading: Builder(builder: (BuildContext context) {
+              return IconButton(
+                  icon: new Icon(Icons.menu, color: Colors.black, size: 35),
+                  onPressed: () {
+                    Scaffold.of(context).openDrawer();
+                  });
+            }),
+            title: SizedBox(
+              height: 33,
+              width: 300,
+              child: OutlinedButton(
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text("검색할 단어를 입력하세요",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            )),
+                      ),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Icon(Icons.search, color: Color(0xFFF3D5FB)),
+                      )
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Search()),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: new RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(20.0)),
+                      side: BorderSide(width: 1.0, color: Color(0xFFF3D5FB)))),
+            )),
+        body: Stack(
           children: [
             GoogleMap(
-              myLocationButtonEnabled:true,
-              zoomGesturesEnabled:true,
+              myLocationButtonEnabled: true,
+              zoomGesturesEnabled: true,
               zoomControlsEnabled: true,
 
-              onMapCreated: _onMapCreated, //지도를 사용할 준비가 되었을 때 콜백
-              initialCameraPosition:
-              CameraPosition(target: LatLng(37.77483, -122.41942), zoom: 12),
+              onMapCreated: _onMapCreated,
+              //지도를 사용할 준비가 되었을 때 콜백
+              initialCameraPosition: CameraPosition(
+                  target: LatLng(37.77483, -122.41942), zoom: 12),
               markers: _markers,
             ),
-
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(
@@ -114,35 +106,27 @@ class _BottomState extends State<Map> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    margin:EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     child: FloatingActionButton(
-                      onPressed: () {  },
-                      backgroundColor: Color(0xFFF3D5FB) ,
-                      child: Icon(
-                          CupertinoIcons.location_solid,
-                          size: 40,
-                          color: Colors.white
-                      ),
+                      onPressed: () {},
+                      backgroundColor: Color(0xFFF3D5FB),
+                      child: Icon(CupertinoIcons.location_solid,
+                          size: 40, color: Colors.white),
                     ),
                   ),
                   Container(
-                    margin:EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     child: FloatingActionButton(
-                      onPressed: () {  },
+                      onPressed: () {},
                       backgroundColor: Color(0xFFF3D5FB),
-                      child: Icon(
-                          CupertinoIcons.add_circled,
-                          size: 40,
-                          color: Colors.white
-                      ),
+                      child: Icon(CupertinoIcons.add_circled,
+                          size: 40, color: Colors.white),
                     ),
                   )
                 ],
-
               ),
             ),
           ],
-
         ),
         drawer: Drawer(
           child: ListView(
