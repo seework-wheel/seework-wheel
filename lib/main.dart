@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'app.dart';
+import 'login.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const wheelApp(),
+      home: const titlePage(),
     );
+  }
+}
+
+class titlePage extends StatelessWidget {
+  const titlePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Login();
   }
 }

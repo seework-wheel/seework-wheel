@@ -165,58 +165,58 @@ class _BottomState extends State<Map> {
               ),
               ListTile(
                 leading: Icon(
-                  Icons.home,
+                  Icons.restaurant_menu,
                   color: Colors.grey[850],
                 ),
                 title: Text('음식점'),
                 onTap: () {
                   print('Home is clicked');
                 },
-                trailing: Icon(Icons.add),
+                trailing: Icon(Icons.arrow_forward_ios),
               ),
               ListTile(
                 leading: Icon(
-                  Icons.settings,
+                  Icons.local_cafe,
                   color: Colors.grey[850],
                 ),
                 title: Text('카페&디저트'),
                 onTap: () {
                   print('Setting is clicked');
                 },
-                trailing: Icon(Icons.add),
+                trailing: Icon(Icons.arrow_forward_ios),
               ),
               ListTile(
                 leading: Icon(
-                  Icons.question_answer,
+                  Icons.hotel,
                   color: Colors.grey[850],
                 ),
                 title: Text('숙박시설'),
                 onTap: () {
                   print('Q&A is clicked');
                 },
-                trailing: Icon(Icons.add),
+                trailing: Icon(Icons.arrow_forward_ios),
               ),
               ListTile(
                 leading: Icon(
-                  Icons.question_answer,
+                  Icons.flight,
                   color: Colors.grey[850],
                 ),
                 title: Text('여행명소'),
                 onTap: () {
                   print('Q&A is clicked');
                 },
-                trailing: Icon(Icons.add),
+                trailing: Icon(Icons.arrow_forward_ios),
               ),
               ListTile(
                 leading: Icon(
-                  Icons.question_answer,
+                  Icons.shopping_cart,
                   color: Colors.grey[850],
                 ),
                 title: Text('쇼핑유통'),
                 onTap: () {
                   print('Q&A is clicked');
                 },
-                trailing: Icon(Icons.add),
+                trailing: Icon(Icons.arrow_forward_ios),
               ),
             ],
           ),
